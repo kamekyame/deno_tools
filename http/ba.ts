@@ -1,11 +1,11 @@
 import { Base64 } from "https://deno.land/x/bb64/mod.ts";
 
-export interface BasicAuth {
+export interface BasicAuthInfo {
   username: string;
   password: string;
 }
 
-const getBa = (auth: BasicAuth): string =>
+const getBa = (auth: BasicAuthInfo): string =>
   `Basic ${Base64.fromString(`${auth.username}:${auth.password}`).toString()}`;
 
 /**
@@ -13,13 +13,13 @@ const getBa = (auth: BasicAuth): string =>
  *
  * @export
  * @param {(string | Request | URL)} input
- * @param {BasicAuth} auth
+ * @param {BasicAuthInfo} auth
  * @param {(RequestInit | undefined)} [init]
  * @return {Promise<Response>}
  */
 export function baFetch(
   input: string | Request | URL,
-  auth: BasicAuth,
+  auth: BasicAuthInfo,
   init?: RequestInit | undefined,
 ): Promise<Response> {
   const headers: HeadersInit = new Headers(init?.headers);
