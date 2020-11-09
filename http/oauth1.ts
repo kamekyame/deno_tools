@@ -174,7 +174,7 @@ export function getRequest(
     timestamp,
   );
   request.headers.set("Authorization", headerAuthString);
-  console.log("url", request.url.toString());
+  //console.log("url", request.url.toString());
   return request;
 }
 
