@@ -1,4 +1,4 @@
-import { Base64 } from "https://deno.land/x/bb64/mod.ts";
+import { Base64 } from "https://deno.land/x/bb64@1.1.0/mod.ts";
 
 export interface BasicAuthInfo {
   username: string;
