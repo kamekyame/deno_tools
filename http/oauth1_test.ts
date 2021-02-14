@@ -1,12 +1,12 @@
-import { assertEquals } from "https://deno.land/std@v0.51.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.87.0/testing/asserts.ts";
 
 import {
-  getParamaterString,
-  getSignatureBaseString,
-  getSigningKey,
   calcSignature,
   getHeaderAuthString,
+  getParamaterString,
   getRequest,
+  getSignatureBaseString,
+  getSigningKey,
 } from "./oauth1.ts";
 
 const consumer_key = "xvz1evFS4wEEPTGEFPHBog";
