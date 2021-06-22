@@ -10,7 +10,8 @@ import {
   BasicAuthInfo,
 } from "https://kamekyame.github.io/deno_tools/http/mod.ts";
 
-const testUrl = "http://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm";
+const testUrl =
+  "http://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm";
 
 const auth: BasicAuthInfo = { username: "kaiin", password: "naisho" };
 
@@ -35,4 +36,16 @@ const auth: OAuth1Info = {
 };
 
 await oAuth1Fetch(auth, "http://www.example.com");
+```
+
+## Bearer
+
+```typescript
+import {
+  bearerFetch,
+} from "https://kamekyame.github.io/deno_tools/http/mod.ts";
+
+const bearerToken = "";
+
+const res = await bearerFetch("http://www.example.com", bearerToken);
 ```
