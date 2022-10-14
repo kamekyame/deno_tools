@@ -2,6 +2,8 @@ name: Denopendabot
 on:
   schedule:
     - cron: "0 0 * * *" # modify to your convinient time
+  workflow_dispatch:
+    
 jobs:
   update:
     name: Update
