@@ -6,8 +6,6 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"
 
 jobs:
   dfl-check:
@@ -27,4 +25,4 @@ jobs:
         uses: denolib/setup-deno@v2
       
       - name: Run Tests
-        run: deno test -A --unstable
+        run: deno test -A
