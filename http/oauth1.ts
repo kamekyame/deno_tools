@@ -1,5 +1,4 @@
-import { v4 } from "https://deno.land/std/uuid/mod.ts";
-import { hmac } from "https://denopkg.com/chiefbiiko/hmac/mod.ts";
+import { hmac } from "https://deno.land/x/hmac@v2.0.1/mod.ts";
 
 export interface OAuth1Info extends OAuth1KeyToken, OAuth1Secret {
 }
@@ -19,7 +18,7 @@ function fixedEncodeURIComponent(str: string) {
     return "%" + c.charCodeAt(0).toString(16);
   });
 }
-const createNonce = () => v4.generate().replace(/-/g, "");
+const createNonce = () => crypto.randomUUID().replace(/-/g, "");
 const getNowTimestamp = () => Math.floor(Date.now() / 1000);
 
 /**
