@@ -178,7 +178,7 @@ export function getRequest(
   return request;
 }
 
-export async function oAuth1Fetch(
+export function oAuth1Fetch(
   auth: OAuth1Info,
   input: string | Request | URL,
   init?: RequestInit,
