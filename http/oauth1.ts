@@ -1,5 +1,4 @@
-import { v4 } from "https://deno.land/std/uuid/mod.ts";
-import { hmac } from "https://denopkg.com/chiefbiiko/hmac/mod.ts";
+import { hmac } from "https://deno.land/x/hmac@v2.0.1/mod.ts";
 
 export interface OAuth1Info extends OAuth1KeyToken, OAuth1Secret {
 }
@@ -19,7 +18,7 @@ function fixedEncodeURIComponent(str: string) {
     return "%" + c.charCodeAt(0).toString(16);
   });
 }
-const createNonce = () => v4.generate().replace(/-/g, "");
+const createNonce = () => crypto.randomUUID().replace(/-/g, "");
 const getNowTimestamp = () => Math.floor(Date.now() / 1000);
 
 /**
@@ -30,7 +29,7 @@ const getNowTimestamp = () => Math.floor(Date.now() / 1000);
  * @param {string} nonce
  * @param {number} timestamp
  * @param {URLSearchParams} [params]
- * @return {string} paramater string 
+ * @return {string} paramater string
  */
 export function getParamaterString(
   auth: OAuth1KeyToken,
@@ -62,7 +61,7 @@ export function getParamaterString(
  * @param {string} method
  * @param {string} baseUrl
  * @param {string} paramaterString
- * @return {string} signature base string 
+ * @return {string} signature base string
  */
 export function getSignatureBaseString(
   method: string,
@@ -81,7 +80,7 @@ export function getSignatureBaseString(
  * https://developer.twitter.com/en/docs/authentication/oauth-1-0a/creating-a-signature
  * @export
  * @param {OAuth1Secret} auth
- * @return {string} signing key 
+ * @return {string} signing key
  */
 export function getSigningKey(auth: OAuth1Secret) {
   return [
@@ -96,7 +95,7 @@ export function getSigningKey(auth: OAuth1Secret) {
  * @export
  * @param {string} signatureBaseString
  * @param {string} signingKey
- * @return {string} signature 
+ * @return {string} signature
  */
 export function calcSignature(signatureBaseString: string, signingKey: string) {
   const signature = hmac(
@@ -116,7 +115,7 @@ export function calcSignature(signatureBaseString: string, signingKey: string) {
  * @param {string} nonce
  * @param {string} signature
  * @param {number} timestamp
- * @return {string} header string 
+ * @return {string} header string
  */
 export function getHeaderAuthString(
   auth: OAuth1KeyToken,
@@ -178,7 +177,7 @@ export function getRequest(
   return request;
 }
 
-export async function oAuth1Fetch(
+export function oAuth1Fetch(
   auth: OAuth1Info,
   input: string | Request | URL,
   init?: RequestInit,

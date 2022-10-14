@@ -15,11 +15,13 @@ console.log(resolver("./test.txt"));
 ```
 
 ### case1 (on Windows)
+
 `import.meta.url` : `files:///C:/Users/testuser/Documents/a.ts`
 
 output : `C:\Users\testuser\Documents\test.txt`
 
 ### case2 (on Unix)
+
 `import.meta.url` : `files:///home/testuser/Documents/a.ts`
 
 output : `\home\testuser\Documents\test.txt`
