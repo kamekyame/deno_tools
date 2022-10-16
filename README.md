@@ -1,10 +1,14 @@
 # Deno tools by kamekyame
 
-![Deno](https://github.com/kamekyame/deno_tools/workflows/Deno/badge.svg?branch=master)
+[![ci](https://github.com/kamekyame/deno_tools/actions/workflows/ci.yml/badge.svg)](https://github.com/kamekyame/deno_tools/actions/workflows/ci.yml)
 
 Denoで使えるツールをまとめました。
 
-このリポジトリはGithub pagesにて公開されているため、urlにて直接Importして使用できます。
+以下のようにインポートすることで使えます。
+
+```ts
+import * as denoToolHttp from "https://cdn.jsdelivr.net/gh/kamekyame/deno_tools/http/mod.ts";
+```
 
 各ツールの詳しい使い方はそれぞれのREADMEをご覧ください。
 

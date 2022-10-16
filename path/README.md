@@ -7,7 +7,7 @@ This is path tool.
 convert relative path to absolute path
 
 ```typescript
-import { pathResolver } from "https://kamekyame.github.io/deno_tools/path/mod.ts";
+import { pathResolver } from "https://cdn.jsdelivr.net/gh/kamekyame/deno_tools/path/mod.ts";
 
 const resolver = pathResolver(import.meta);
 
