@@ -8,7 +8,7 @@ This is http fetch tool.
 import {
   baFetch,
   BasicAuthInfo,
-} from "https://kamekyame.github.io/deno_tools/http/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/kamekyame/deno_tools/http/mod.ts";
 
 const testUrl =
   "http://leggiero.sakura.ne.jp/xxxxbasic_auth_testxxxx/secret/kaiin_page_top.htm";
@@ -26,7 +26,7 @@ console.log(res.status);
 import {
   oAuth1Fetch,
   OAuth1Info,
-} from "https://kamekyame.github.io/deno_tools/http/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/kamekyame/deno_tools/http/mod.ts";
 
 const auth: OAuth1Info = {
   consumerKey: "",
@@ -43,7 +43,7 @@ await oAuth1Fetch(auth, "http://www.example.com");
 ```typescript
 import {
   bearerFetch,
-} from "https://kamekyame.github.io/deno_tools/http/mod.ts";
+} from "https://cdn.jsdelivr.net/gh/kamekyame/deno_tools/http/mod.ts";
 
 const bearerToken = "";
 

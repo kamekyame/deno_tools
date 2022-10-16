@@ -25,4 +25,4 @@ jobs:
         uses: denolib/setup-deno@v2
       
       - name: Run Tests
-        run: deno test -A
+        run: deno test -A --doc --import-map ./test/import-map.json
