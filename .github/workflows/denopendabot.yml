@@ -17,5 +17,7 @@ jobs:
           private_key: ${{ secrets.PRIVATE_KEY }}
       - uses: hasundue/denopendabot@0.6.2
         with:
-          token: ${{ steps.generate_token.outputs.token }}
-          user-token: ${{ steps.generate_token.outputs.token }}
+          mode: app
+          auto-merge: false
+          # token: ${{ steps.generate_token.outputs.token }}
+          # user-token: ${{ steps.generate_token.outputs.token }}
