@@ -18,6 +18,5 @@ jobs:
       - uses: hasundue/denopendabot@0.10.8
         with:
           mode: app
-          auto-merge: false
           # token: ${{ steps.generate_token.outputs.token }}
           # user-token: ${{ steps.generate_token.outputs.token }}
